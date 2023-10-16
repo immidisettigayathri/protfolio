@@ -1,0 +1,262 @@
+.header-section {
+    display: flex;
+    justify-content: flex-end;
+    text-decoration: none;
+    position: sticky;
+    top: 0;
+    background-color: white;
+    padding: 0;
+}
+
+.header-section h1 {
+    font-family: 'Heebo', sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    padding: 10px;
+    margin-right: 10px;
+    color: #000000;
+
+}
+
+.header-section h1:hover {
+    color: #FF6464;
+}
+
+a {
+    text-decoration: none;
+}
+
+.title {
+    color: var(--Dark-Color, #21243D);
+    font-family: Heebo;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    padding: 0 0px;
+    margin: 0;
+}
+
+.vertical-line {
+    border-right: 2px solid;
+    margin-left: 10px;
+    height: 35px;
+    margin-top: auto;
+    margin-bottom: auto;
+    color: #000;
+}
+
+.featured-title {
+    color: #21243D;
+    font-family: Heebo;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 600;
+    margin: 0;
+
+    text-transform: capitalize;
+}
+
+.featured-section {
+    padding: 30px 100px;
+}
+
+.featured-date {
+    color: #fff;
+    font-family: Heebo;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    margin: auto 0;
+    border-radius: 30px;
+    background: #142850;
+    box-shadow: 0px 4px 10px 0px rgba(187, 225, 250, 0.25);
+    padding: 7px 14px;
+}
+
+.featured-para {
+    color: #21243D;
+    font-family: Heebo;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    margin: 0;
+}
+
+.featured-wrapper {
+    display: flex;
+    margin-bottom: 20px;
+    flex-direction: column;
+}
+
+.featured-wrapper-content {
+    flex-direction: column;
+
+}
+
+.content p {
+    margin: 0;
+    line-height: 1.5;
+}
+
+.featured-section .featured-wrapper-content {
+    margin-left: 20px;
+    margin-bottom: 0px;
+    padding: 7px 0;
+}
+
+.featured-works {
+    display: flex;
+
+    border-bottom: 2px solid #E0E0E0;
+    padding: 30px 0;
+}
+
+.featured-works-wrapper h4 {
+    color: #21243D;
+    font-family: Heebo;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    /*  margin: 0px;*/
+    margin: auto 10px;
+}
+
+.featured-wrapper img {
+    border-radius: 10px;
+}
+
+.arrow-left-wrapper {
+    font-family: Heebo;
+    font-size: 20px;
+    padding: 0 94px;
+    color: #21243D;
+    margin: 0;
+    position: sticky;
+    top: 24px;
+}
+
+.featured-works-wrapper {
+    display: flex;
+    margin: 10px 0;
+}
+
+.footer-section {
+    padding: 0 100px;
+    text-align: center;
+}
+
+.footer-section img {
+    align-items: center;
+    margin-left: 16px;
+}
+
+.footer-section p {
+    color: #21243D;
+    text-align: center;
+    font-family: Heebo;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    margin-left: 17px;
+}
+
+@media all and (max-width:767px) {
+    .header-section {
+        justify-content: center;
+    }
+
+    .featured-section {
+        padding: 30px 10px;
+    }
+
+    .title {
+        font-size: 35px;
+        margin: 0;
+        padding: 0 6px;
+    }
+
+    .footer-section {
+        padding: 0;
+        padding-right: 20px;
+    }
+
+    .featured-section .featured-wrapper-content {
+        margin: 0;
+        padding: 30px 8px;
+
+    }
+
+    .arrow-left-wrapper {
+        padding: 0 14px;
+        position: unset;
+    }
+
+    .featured-works-wrapper {
+
+        justify-content: space-between;
+    }
+
+    .featured-wrapper img {
+        width: 100%;
+        height: 300px;
+
+        margin: 0;
+    }
+
+    .featured-works {
+        flex-direction: column;
+        margin-bottom: 0;
+        padding: 30px 0 0;
+    }
+
+    .featured-works-wrapper h4 {
+        font-size: 16px;
+        margin: auto 0;
+    }
+
+    .vertical-line {
+        margin: 0;
+    }
+
+    .featured-title {
+        font-size: 22px;
+    }
+
+    .featured-date {
+        font-size: 16px;
+        padding: 7px 9px;
+    }
+}
+
+@media all and (min-width:768px) and (max-width:992px) {
+    .featured-section {
+        padding: 30px 10px;
+    }
+
+    .arrow-left-wrapper {
+        padding: 0 15px;
+    }
+
+    .title {
+        padding: 0 8px;
+        font-size: 40px;
+        margin: 0;
+    }
+
+    .featured-title {
+        font-size: 30px
+    }
+
+    .featured-wrapper img {
+        width: 60%;
+        height: auto;
+    }
+
+    .featured-section .featured-wrapper-content {
+        padding: 15px 0;
+    }
+
+    .footer-section {
+        padding: 0 0;
+    }
+}

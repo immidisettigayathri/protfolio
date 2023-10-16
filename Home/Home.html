@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Heebo:wght@100;200;300;400;500;600;700;800;900&family=Poppins:wght@100;200;400;500;600;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="Home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+<script>
+    let recentdata = "https://jsonplaceholder.typicode.com/posts";
+    fetch(recentdata)
+        .then(response => response.json())
+        .then(data => {
+            const sliceData = data.slice(3, 5);
+            console.log(sliceData);
+            const recentSection = document.querySelector(".recent-wrapper");
+            document.getElementsByClassName("blog-section").innerHTML = sliceData;
+            sliceData.forEach(post => {
+                const postElement = document.createElement("div");
+                postElement.className = "recent-posts"
+                postElement.innerHTML = `
+                    <h1 class="blog-title">${post.title}</h1>
+                    <div class="blog-wrapper">
+                    <h3 class="blog-date">${new Date(post.id).toDateString()}</h3><div class="vertical-line"></div><h4>Express Handlebars</h4>
+                    </div>
+                    
+                    <p class="blog-para" >${post.body}</p>
+                    `;
+                recentSection.appendChild(postElement);
+            });
+        })
+        .catch(error => console.error("Error fetching data:", error));
+
+    let featureddata = "https://jsonplaceholder.typicode.com/photos";
+
+    fetch(featureddata)
+        .then(response => response.json())
+        .then(data => {
+            const sliceData = data.slice(4, 7);
+            console.log(sliceData);
+            const featuredsection = document.querySelector(".featured-wrapper");
+            document.getElementsByClassName("blog-section").innerHTML = sliceData;
+            sliceData.forEach(post => {
+                const postElement = document.createElement("div");
+
+                postElement.className = "featured-works"
+                postElement.innerHTML = `
+                  <img src=${post.thumbnailUrl}>  
+                 <div class="featured-wrapper-content">
+                    <h1 class="featured-title">${post.title}</h1>
+                    <div class="featured-works-wrapper">
+                    <h2 class="featured-date">${new Date(post.id).toDateString()}</h2><div class="vertical-line"></div>  <h4>Express Handlebars</h4></h4></div>
+                    <p class="featured-para">quia et suscipit suscipit recusandae consequuntur expedita et cum reprehenderit molestiae ut ut quas totam nostrum rerum est </p>
+                  </div>  
+                  </div>              
+                `;
+                featuredsection.appendChild(postElement);
+            });
+        })
+        .catch(error => console.error("Error fetching data:", error));
+</script>
+
+<body>
+    <!--header section starts-->
+
+    <div class="header-section">
+        <a href="featured-works.html">
+            <h1>Works</h1>
+        </a>
+        <a href="blog.html">
+            <h1>Blogs</h1>
+        </a>
+        <a href="contactus.html">
+            <h1>Contact</h1>
+        </a>
+
+    </div>
+    <!--header section ends-->
+    <!--banner section starts-->
+    <div class="banner-section">
+        <div class="content-wrapperr">
+            <h1>Hi, I am John,
+                Creative Technologist</h1>
+            <p>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat Velit
+                officia consequat
+                duis
+                enim
+                velit mollit. Exercitation veniam consequat sunt nostrud amet.</p>
+            <a href="resume.pdf" download="resume">
+                <button type="submit" value="submit" class="mybutton">
+                    Download Resume
+                </button>
+            </a>
+        </div>
+
+        <img src="\Assets\avatar2.webp" width="35%" height="auto">
+    </div>
+    <!--banner section ends-->
+    <!--Recent post section starts-->
+    <div class="recent-section" id="blog-1">
+        <div class="content-wrapper">
+            <h1>Recent posts </h1>
+            <a href="blog.html">View all
+                <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+        <div class="recent-wrapper">
+
+        </div>
+    </div>
+    <!--Recent post section end-->
+    <!--featured section starts-->
+    <div class="featured-section" id="featured-section-1">
+        <div class="content-wrapper">
+            <h3>Featured works</h3>
+            <a href="featured-works.html">View all<i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+        <div class="featured-wrapper" style="display: flex;">
+
+        </div>
+
+    </div>
+
+    <!--featured section ends-->
+    <!--footer section starts-->
+    <div class="footer-section">
+        <a href="https://www.facebook.com" target="_blank"> <img src="/Assets/fb.png"></a>
+        <a href="https://www.twitter.com" target="_blank"><img src="/Assets/twitter.png"></a>
+        <a href="https://www.instagram.com" target="_blank"><img src="/Assets/insta.png"></a> <a
+            href="https://www.Linkedin.com" target="_blank"><img src="/Assets/Linkedin.png"></a>
+        <p>Copyright ©2020 All rights reserved </p>
+    </div>
+    <!--footer section ends-->
+</body>
+
+</html>
