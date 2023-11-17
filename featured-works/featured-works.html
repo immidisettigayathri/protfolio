@@ -49,27 +49,47 @@
             });
         })
         .catch(error => console.error("Error fetching data:", error));
+
+    // Wait for the DOM to fully load before running the JavaScript
+    document.addEventListener('DOMContentLoaded', function () {
+        const topscroll = document.getElementById("up-chevron");
+
+        window.onscroll = function scroll() {
+            if (document.documentElement.scrollTop > 200) {
+                topscroll.style.display = "block";
+            } else {
+                topscroll.style.display = "none";
+            }
+
+        }
+    });
+
+    // When the user clicks on the button, scroll to the top of the document
+    function topscrollbutton() {
+        document.documentElement.scrollTop = 0;
+    }
+
 </script>
 
 <body>
     <div class="header-section">
-        <a href="#featured-section-1">
+        <a href="/works/works.html">
             <h1>Works</h1>
         </a>
-        <a href="blog.html">
+        <a href="/blog/blog.html">
             <h1>Blogs</h1>
         </a>
-        <a href="contactus.html">
+        <a href="/contact/contactus.html">
             <h1>Contact</h1>
         </a>
     </div>
-    <a href="home.html">
+    <a href="/Home/Home.html">
 
         <h6 class="arrow-left-wrapper"> <i class="fa-solid fa-arrow-left"></i> Back to home</h6>
     </a>
     <div class="featured-section" id="featured-section-1">
         <h3 class="title">Works</h3>
-        <a href="works.html">
+        <a href="/works/works.html">
             <div class="featured-wrapper">
 
 
@@ -77,13 +97,19 @@
         </a>
 
     </div>
+    <a href="mailto:someone@example.com">
+        <div class="call-icon">
+            <i class="fa-solid fa-envelope"></i>
+        </div>
+    </a>
+    <button onclick="topscrollbutton()" id="up-chevron"><i class="fa-solid fa-chevron-up"></i></button>
     <!--footer section starts-->
     <div class="footer-section">
-        <a href="https://www.facebook.com" target="_blank"> <img src="\Assets\fb.png"></a> <a
-            href="https://www.twitter.com" target="_blank"><img src="\Assets\twitter.png"></a> <a
-            href="https://www.instagram.com" target="_blank"><img src="\Assets\insta.png"></a> <a
-            href="https://www.Linkedin.com" target="_blank"><img src="\Assets\Linkedin.png"></a>
-        <p>Copyright ©2020 All rights reserved </p>
+        <a href="https://www.facebook.com" target="_blank"> <i class="fa-brands fa-facebook-f"></i> <a
+                href="https://www.twitter.com" target="_blank"><i class="fa-brands fa-twitter"></i> <a
+                    href="https://www.instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i> <a
+                        href="https://www.Linkedin.com" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                    <p>Copyright ©2023.All rights reserved. </p>
     </div>
     <!--footer section ends-->
 

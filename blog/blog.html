@@ -42,24 +42,45 @@
             });
         })
         .catch(error => console.error("Error fetching data:", error));
+
+    // Wait for the DOM to fully load before running the JavaScript
+    document.addEventListener('DOMContentLoaded', function () {
+        const topscroll = document.getElementById("up-chevron");
+
+        window.onscroll = function scroll() {
+            if (document.documentElement.scrollTop > 200) {
+                topscroll.style.display = "block";
+            } else {
+                topscroll.style.display = "none";
+            }
+
+        }
+    });
+
+    // When the user clicks on the button, scroll to the top of the document
+    function topscrollbutton() {
+
+        document.documentElement.scrollTop = 0;
+    }
+
 </script>
 
 <body>
     <div class="header-section">
 
-        <a href="featured-works.html">
+        <a href="/featured-works/featured-works.html">
             <h1>Works</h1>
         </a>
         <a href="#blog-section-wrapper">
             <h1>Blogs</h1>
         </a>
-        <a href="contactus.html">
+        <a href="/contact/contactus.html">
             <h1>Contact</h1>
         </a>
 
     </div>
 
-    <a href="home.html">
+    <a href="/Home/Home.html">
         <h6 class="arrow-left-wrapper">
             <i class="fa-solid fa-arrow-left"></i> Back to home
         </h6>
@@ -67,12 +88,19 @@
     <div class="blog-section" id="blog-section-wrapper">
         <h1 class="title">Blogs</h1>
     </div>
+    <a href="mailto:someone@example.com">
+        <div class="call-icon">
+
+            <i class="fa-solid fa-envelope"></i>
+        </div>
+    </a>
+    <button onclick="topscrollbutton()" id="up-chevron"><i class="fa-solid fa-chevron-up"></i></button>
     <div class="footer-section">
-        <a href="https://www.facebook.com" target="_blank"> <img src="\Assets\fb.png"></a>
-        <a href="https://www.twitter.com" target="_blank"><img src="\Assets\twitter.png"></a> <a
-            href="https://www.instagram.com" target="_blank"><img src="\Assets\insta.png"></a> <a
-            href="https://www.Linkedin.com" target="_blank"><img src="\Assets\Linkedin.png"></a>
-        <p>Copyright ©2020 All rights reserved </p>
+        <a href="https://www.facebook.com" target="_blank"> <i class="fa-brands fa-facebook-f"></i></a>
+        <a href="https://www.twitter.com" target="_blank"><i class="fa-brands fa-twitter"></i></a> <a
+            href="https://www.instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a> <a
+            href="https://www.Linkedin.com" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+        <p>Copyright ©2020.All rights reserved. </p>
     </div>
 
 </body>

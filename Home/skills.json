@@ -1,0 +1,22 @@
+[
+    {
+        "icon": "fa-solid fa-desktop",
+        "title": "web development",
+        "body": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga ut suscipit"
+    },
+    {
+        "icon": "fa-solid fa-mobile-screen-button",
+        "title": "Responsive design",
+        "body": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga ut suscipit "
+    },
+    {
+        "icon": "fa-brands fa-css3-alt",
+        "title": "styling",
+        "body": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga ut suscipit"
+    },
+    {
+        "icon": "fa-brands fa-html5",
+        "title": "coding",
+        "body": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga ut suscipit "
+    }
+]

@@ -8,6 +8,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
         href="https://fonts.googleapis.com/css2?family=Heebo:wght@100;200;300;400;500;600;700;800;900&family=Poppins:wght@100;200;400;500;600;800&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="Home.css">
@@ -40,12 +45,12 @@
         })
         .catch(error => console.error("Error fetching data:", error));
 
-    let featureddata = "https://jsonplaceholder.typicode.com/photos";
 
+    let featureddata = "https://jsonplaceholder.typicode.com/photos";
     fetch(featureddata)
         .then(response => response.json())
         .then(data => {
-            const sliceData = data.slice(4, 7);
+            const sliceData = data.slice(7, 10);
             console.log(sliceData);
             const featuredsection = document.querySelector(".featured-wrapper");
             document.getElementsByClassName("blog-section").innerHTML = sliceData;
@@ -58,7 +63,11 @@
                  <div class="featured-wrapper-content">
                     <h1 class="featured-title">${post.title}</h1>
                     <div class="featured-works-wrapper">
-                    <h2 class="featured-date">${new Date(post.id).toDateString()}</h2><div class="vertical-line"></div>  <h4>Express Handlebars</h4></h4></div>
+                    <h2 class="featured-date">${new Date(post.id).toDateString()}</h2>
+                    <div class="vertical-line">
+                        </div>  
+                        <h4>Express Handlebars</h4></h4>
+                        </div>
                     <p class="featured-para">quia et suscipit suscipit recusandae consequuntur expedita et cum reprehenderit molestiae ut ut quas totam nostrum rerum est </p>
                   </div>  
                   </div>              
@@ -67,24 +76,199 @@
             });
         })
         .catch(error => console.error("Error fetching data:", error));
+
+
+    // Wait for the DOM to fully load before running the JavaScript
+    document.addEventListener('DOMContentLoaded', function () {
+        const topscroll = document.getElementById("up-chevron");
+
+        window.onscroll = function scroll() {
+            if (document.documentElement.scrollTop > 400) {
+                topscroll.style.display = "block";
+            } else {
+                topscroll.style.display = "none";
+            }
+        }
+    });
+
+    // When the user clicks on the button, scroll to the top of the document
+    function topscrollbutton() {
+        document.documentElement.scrollTop = 0;
+    }
+
+
+    //skill
+    let skilldata = "skills.json";
+    fetch(skilldata)
+        .then(response => response.json())
+        .then(data => {
+            const skillSection = document.querySelector(".skills-wrapper");
+            // Assuming the data is an array of posts
+            data.forEach(post => {
+                const postElement = document.createElement("div");
+
+                postElement.className = "web-development"
+                postElement.innerHTML = `
+                <div class="web-development-content">
+                    <i class="${post.icon}"></i> 
+                   <h1>${post.title}</h1>                   
+                    <p>${post.body}</p>
+                    </div>  
+                `;
+                skillSection.appendChild(postElement);
+            });
+        })
+        .catch(error => console.error("Error fetching data:", error));
+
+
+    //education
+    document.addEventListener("DOMContentLoaded", () => {
+        fetch("education.json")
+            .then(response => response.json())
+            .then(data => {
+                const educationSection = document.querySelector(".education");
+                data.forEach(post => {
+                    const postElement = document.createElement("div");
+                    postElement.className = "education-item";
+                    postElement.innerHTML = `
+                        <div class="image-section">
+                            <img src="${post.image}">
+                        </div>
+
+                        <div class="content-section">
+                            <div class="content-section-wrapper">
+                            <div class="my-education">
+                                <h1>${post.title}</h1>
+                                <p>${post.body}</p>
+                            </div>
+                            <div class="post-graduation">
+                            <div class="post-graduation-section">
+                                <div class="icon">
+                                    <i class="fas fa-desktop"></i>
+                                </div>
+                                <div class="graduation-content-wrapper">
+                                    <div class="graduation">
+                                    <h2>${post.postGraduation.title}</h2>
+                                    <div class="date-wrapper">
+                                     <h3>${post.postGraduation.date}</h3>
+                                        </div>
+                                        </div>
+                                    <p>${post.postGraduation.description}</p>
+                                </div>
+                            </div>
+                            <div class="graduation-section">
+                                <div class="icon">
+                                    <i class="fas fa-graduation-cap"></i>
+                                </div>
+                                <div class="graduation-content-wrapper">
+                                    <div class="graduation">
+                                    <h2>${post.graduation.title}</h2>
+                                    <div class="date-wrapper">
+                                      <h3>  ${post.graduation.date}</h3>
+                                        </div>
+                                        </div>
+                                    <p>${post.graduation.description}</p>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    `;
+                    educationSection.appendChild(postElement);
+                });
+            })
+            .catch(error => console.error("Error fetching data:", error));
+    });
+
+    //experience
+    fetch("experience.json")
+        .then(response => response.json())
+        .then(data => {
+            const experienceSection = document.querySelector(".experience");
+            data.forEach(post => {
+                const postElement = document.createElement("div");
+                postElement.className = "experience-item";
+                experienceSection.innerHTML = `
+                        <div class="image-wrapper">
+                         <img src="${post.image}">
+                        </div>
+                        <div class="content">
+                            <div class="content-section-wrapper">
+                                <div class="my-experience">
+                                    <h1>${post.title}</h1>
+                                    <p>${post.body}</p>
+                                </div>
+                                <div class="experience-section">
+                                <div class="web-developer">
+                                    <div class="icon">
+                                        <i class="fas fa-desktop"></i>
+                                    </div>
+                                    <div class="graduation-content-wrapper">
+                                        <div class="web-developer-wrapper">
+                                        <h2>${post.webDeveloper.title}</h2>
+                                        <div class="date-wrapper">
+                                      <h3>  ${post.webDeveloper.date}</h3>
+                                        </div>
+                                        </div>
+                                        <p>${post.webDeveloper.description}</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="ui-engineer">
+                                    <div class="icon">
+                                        <i class="fas fa-desktop"></i>
+                                    </div>
+                                    <div class="graduation-content-wrapper">
+                                        <div class="web-developer-wrapper">
+                                        <h2>${post.uiEngineer.title}</h2>
+                                        <div class="date-wrapper">
+                                      <h3>  ${post.uiEngineer.date}</h3>
+                                        </div>
+                                        </div>
+                                        <p>${post.uiEngineer.description}</p>
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+            })
+        })
+        .catch(error => console.error("Error fetching experience data:", error));
+
+    // const educationdata = "education.json"
+    // fetch("educationdata");
+
+    // const titles = educationdata.map(item => item.title);
+    // const body = educationdata.map(item => item.body);
+    // const postgraduation = educationdata.map(item => item.postgraduation);
+    // const postgraduationtitle = educationdata.map(item => item.postgraduationtitle);
+    // const postgraduationdescription = educationdata.map(item => postgraduationdescription);
+    // //const postgraduationdescription=document.getElementsByClassName(postgraduation.description);
+    // const graduation = educationdata.map(item => item.graduation);
+    // const graduationtitle = educationdata.map(item => item.graduationtitle);
+    // const graduationdescription = educationdata.map(item => graduationdescription)
+    // const titleElement = document.getElementByClassname("education");
+    // const descriptionElement = document.getElementById("education-item");
+
+    // titleElement.innerHTML = `<p>${titles.join("</p><p>")}</p>`;
+    // descriptionElement.innerHTML = `<p>${descriptions.join("</p><p>")}</p>`;
 </script>
 
 <body>
     <!--header section starts-->
-
     <div class="header-section">
-        <a href="featured-works.html">
+        <a href="/featured-works/featured-works.html">
             <h1>Works</h1>
         </a>
-        <a href="blog.html">
+        <a href="/blog/blog.html">
             <h1>Blogs</h1>
         </a>
-        <a href="contactus.html">
+        <a href="/contact/contactus.html">
             <h1>Contact</h1>
         </a>
-
     </div>
     <!--header section ends-->
+
     <!--banner section starts-->
     <div class="banner-section">
         <div class="content-wrapperr">
@@ -95,7 +279,7 @@
                 duis
                 enim
                 velit mollit. Exercitation veniam consequat sunt nostrud amet.</p>
-            <a href="resume.pdf" download="resume">
+            <a href="/Assets/resume.pdf" download="resume">
                 <button type="submit" value="submit" class="mybutton">
                     Download Resume
                 </button>
@@ -105,38 +289,199 @@
         <img src="\Assets\avatar2.webp" width="35%" height="auto">
     </div>
     <!--banner section ends-->
+    <!-- About Us section -->
+    <div class="about-section">
+        <div class="about">
+            <div class="about-section-wrapper">
+                <h1>Objective</h1>
+                <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi, vero! Quod, mollitia sint eum,
+                    veritatis molestias animi aut in</p>
+                <p> autem et nobis temporibus aspernatur. Magni nihil nemo in sunt
+                    suscipit vero! Quod, mollitia sint eum.</p>
+            </div>
+        </div>
+        <div class="image-section-wrapper">
+            <img src="/Assets/laptop.jpg">
+        </div>
+        <div class="progress-bar">
+            <div class="progress-bar-section">
+                <h1>My Skills</h1>
+                <h5>HTML
+                    <div class="vertical"></div>
+                    <div class="verticalline"></div> CSS <div class="vertical"></div>
+                    <div class="verticalline"></div>JavaScript
+                </h5>
+
+                <div class="html-wrapper">
+                    <h6>HTML</h6>
+                    <p>100%</p>
+                </div>
+                <div class="container">
+                    <div class="html">
+                    </div>
+                </div>
+                <div class="css-wrapper">
+                    <h6>CSS</h6>
+                    <P>80%</P>
+                </div>
+                <div class="container">
+                    <div class="css">
+                    </div>
+                </div>
+                <div class="javascript-wrapper">
+                    <h6>JavaScript</h6>
+                    <p>70%</p>
+                </div>
+                <div class="container">
+                    <div class="javascript">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- about us section ends -->
+
+    <!-- skill-section starts -->
+    <div class="skills-wrapper">
+    </div>
+    <!-- skil section ends -->
+
+    <!--education/experience-section starts -->
+    <div class="education">
+    </div>
+    <div class="experience">
+    </div>
+    <!-- education/experience-section ends -->
+
     <!--Recent post section starts-->
     <div class="recent-section" id="blog-1">
         <div class="content-wrapper">
             <h1>Recent posts </h1>
-            <a href="blog.html">View all
+            <a href="/blog/blog.html">View all
                 <i class="fa-solid fa-arrow-right"></i></a>
         </div>
         <div class="recent-wrapper">
-
         </div>
     </div>
     <!--Recent post section end-->
+
     <!--featured section starts-->
     <div class="featured-section" id="featured-section-1">
         <div class="content-wrapper">
             <h3>Featured works</h3>
-            <a href="featured-works.html">View all<i class="fa-solid fa-arrow-right"></i></a>
+            <a href="/featured-works/featured-works.html">View all<i class="fa-solid fa-arrow-right"></i></a>
         </div>
         <div class="featured-wrapper" style="display: flex;">
 
         </div>
+    </div>
+    <!--featuredworks ends-->
+
+    <!-- contact section starts -->
+    <div class="contact-wrapper">
+        <i class="fa-regular fa-user"></i>
+        <h1> get in touch</h1>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sit repellat perferendis vel qui. Mollitia est
+            ipsum, aliquam placeat molestias minima, quas corporis nulla magnam odit porro necessitatibus, nesciunt
+            omnis quaerat.</p>
+        <a href="#getintouch-wrapper">
+            <button type="button">Get in touch</button>
+    </div>
+    </a>
+    <div class="contact-us-wrapper" id="getintouch-wrapper">
+
+        <form>
+            <div class="form-wrapper">
+                <h1>say hello...</h1>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+                <div class="form-1">
+                    <input type="text" id="name" placeholder="Enter your name" required />
+                </div>
+                <div class="form-1">
+                    <input type="email" id="name" placeholder="Email" required />
+                </div>
+                <div class="form-1">
+                    <input type="text" id="name" placeholder="Company" required>
+                </div>
+                <div class="form-1">
+                    <input type="number" id="name" placeholder="Enter your phonenumber" required max-length="10">
+                </div>
+                <div class="form-1">
+                    <textarea rows="4" cols="50" placeholder="Write your message here...." required></textarea>
+                </div>
+                <button type="submit" value="submit">
+                    Submit
+                </button>
+        </form>
 
     </div>
+    <div class="map-wrapper">
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31108.54571037282!2d77.61159272791274!3d12.93545014207699!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae144ed898fc2d%3A0x1681f38e8c00ae56!2sKoramangala%2C%20Bengaluru%2C%20Karnataka!5e0!3m2!1sen!2sin!4v1697019443030!5m2!1sen!2sin"
+            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
 
-    <!--featured section ends-->
+    <div class="contact">
+        <div class="contact-section-wrapper">
+
+            <h2>contact</h2>
+            <a href="tel:+4733378901">
+                <p class="telephone-wrapper"><i class="fa-solid fa-phone"></i>+8383987739789</p>
+            </a>
+            <a href="mailto:someone@example.com">
+                <p class="mail-wrapper"><i class="fa-regular fa-envelope"></i>gayathri@gmail.com</p>
+            </a>
+            <p class="company-wrapper"><i class="fa-solid fa-globe"></i>Company.co</p>
+            <a href="/Assets/resume.pdf" download="resume">
+                <p class="resume-icon"><i class="fa-regular fa-file"></i>
+                    Download Resume<i class="fa-solid fa-arrow-down"></i>
+                </p>
+            </a>
+            <a href="https: //github.com/immidisettigayathri/protfolio.git" target="_blank">
+                <p class="git-icon"> <i class="fa-brands fa-github"></i>
+                    View Projects
+                </p>
+            </a>
+
+            <div class="quote-wrapper">
+                <i class="fa-solid fa-quote-left"></i>
+                <p>
+                    Once you start a working on something don't be afraid of failure and don't abandon it. people
+                    who
+                    work
+                    sincerely are the happiest.
+                </p>
+                <h6> - Chanakya</h6>
+
+            </div>
+
+            <div class="footer-section-wrapper">
+                <a href="https://www.facebook.com" target="_blank"> <i class="fa-brands fa-facebook-f"></i> </a>
+                <a href="https://www.twitter.com" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+                <a href="https://www.instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.Linkedin.com" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <!-- contact-section ends -->
+
+    <a href="mailto:someone@example.com">
+        <div class="call-icon">
+            <i class="fa-solid fa-envelope"></i>
+        </div>
+    </a>
+    <button onclick="topscrollbutton()" id="up-chevron"><i class="fa-solid fa-chevron-up"></i></button>
+
     <!--footer section starts-->
     <div class="footer-section">
-        <a href="https://www.facebook.com" target="_blank"> <img src="/Assets/fb.png"></a>
-        <a href="https://www.twitter.com" target="_blank"><img src="/Assets/twitter.png"></a>
-        <a href="https://www.instagram.com" target="_blank"><img src="/Assets/insta.png"></a> <a
-            href="https://www.Linkedin.com" target="_blank"><img src="/Assets/Linkedin.png"></a>
-        <p>Copyright ©2020 All rights reserved </p>
+        <a href="https://www.facebook.com" target="_blank"> <i class="fa-brands fa-facebook-f"></i> </a>
+        <a href="https://www.twitter.com" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+        <a href="https://www.instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a> <a
+            href="https://www.Linkedin.com" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+        <p>Copyright ©2023.All rights reserved.</p>
     </div>
     <!--footer section ends-->
 </body>

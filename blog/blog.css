@@ -6,17 +6,35 @@
     top: 0;
     background-color: white;
     padding: 0;
+    box-shadow: 5px 5px white;
 
 }
 
 .header-section h1 {
-    font-family: 'Heebo', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-weight: 500;
     font-size: 20px;
     padding: 10px;
     margin-right: 10px;
     color: #000000;
+}
 
+.arrow-left-wrapper {
+    font-family: Heebo;
+    font-size: 20px;
+    padding: 0 94px;
+    color: #21243D;
+    margin: 0;
+    position: sticky;
+    top: 24px;
+}
+
+.arrow-left-wrapper:hover {
+    color: #FF6464;
+}
+
+.header-section h1:hover {
+    color: #FF6464;
 }
 
 a {
@@ -27,13 +45,9 @@ a {
     padding: 30px 100px;
 }
 
-
-
 .title {
-    font-family: heebo;
+    font-family: 'Poppins', sans-serif;
     margin: 0;
-
-
     font-size: 40px;
     font-weight: 400;
 }
@@ -49,12 +63,11 @@ a {
 
 .blog-section .blog-title {
     color: #21243D;
-    font-family: Heebo;
+    font-family: 'Poppins', sans-serif;
     font-size: 30px;
     font-style: normal;
-    font-weight: 700;
+    font-weight: 500;
     margin: 0;
-    /*  margin-bottom: 30px;*/
 }
 
 .blog-section h2 {
@@ -89,12 +102,24 @@ a {
     font-style: normal;
     font-weight: 400;
     margin: auto 15px;
-
-
 }
 
+html {
+    scroll-behavior: smooth;
+}
 
-
+#up-chevron {
+    font-size: 20px;
+    background-color: #21243D;
+    border-radius: 50%;
+    border: none;
+    color: white;
+    cursor: pointer;
+    position: fixed;
+    bottom: 38px;
+    right: 17px;
+    padding: 15px;
+}
 
 .blog-wrapper {
     display: flex;
@@ -116,30 +141,35 @@ a {
     border: 2px solid #E0E0E0;
 }
 
-.arrow-left-wrapper {
-    font-family: Heebo;
+.call-icon i {
+    display: block;
     font-size: 20px;
-    padding: 0 94px;
-    color: #21243D;
-    margin: 0;
+}
 
-    position: sticky;
-    top: 24px;
-
+.call-icon {
+    border: 15px solid #FF6464;
+    background: #FF6464;
+    border-radius: 50%;
+    color: white;
+    position: fixed;
+    left: 15px;
+    bottom: 38px;
 }
 
 .footer-section {
     padding: 0 100px;
-
-
     text-align: center;
-
     margin-top: 30px;
 }
 
-.footer-section img {
-    align-items: center;
+.footer-section i {
+    font-size: 25px;
+    color: black;
     margin-left: 16px;
+}
+
+.footer-section a :hover {
+    color: #FF6464;
 }
 
 .footer-section p {
@@ -149,7 +179,6 @@ a {
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
-
     margin-left: 17px;
 }
 
@@ -161,7 +190,6 @@ a {
     .arrow-left-wrapper {
         padding: 0 10px;
         position: unset;
-
     }
 
     .blog-section {
@@ -194,6 +222,24 @@ a {
         font-size: 35px;
     }
 
+
+    .call-icon i {
+        display: block;
+        font-size: 20px;
+    }
+
+    .call-icon {
+        border: 15px solid #FF6464;
+        background: #FF6464;
+        border-radius: 50%;
+        color: white;
+        position: fixed;
+        left: 15px;
+        bottom: 38px;
+    }
+
+
+
     .footer-section {
         padding: 0;
     }
@@ -202,7 +248,6 @@ a {
 @media all and (min-width:768px) and (max-width:992px) {
     .blog-section {
         padding: 30px 10px;
-
     }
 
     .arrow-left-wrapper {
@@ -213,7 +258,72 @@ a {
         margin: 8px 0;
     }
 
+    .call-icon i {
+        display: block;
+        text-align: end;
+        font-size: 30px;
+    }
+
+    .call-icon {
+        border: 15px solid #FF6464;
+        background: #FF6464;
+        border-radius: 50%;
+        position: fixed;
+        left: 15px;
+        bottom: 50px;
+        color: white;
+    }
+
+    #up-chevron {
+        font-size: 30px;
+    }
+
     .footer-section {
         margin: 64px 0;
     }
+}
+
+@media screen and (max-width: 768px) and (orientation: landscape) {
+    .header-section {
+        justify-content: right;
+    }
+
+    .call-icon i {
+        font-size: 14px;
+
+    }
+
+    .call-icon {
+        bottom: 25px;
+    }
+
+    #up-chevron {
+        font-size: 14px;
+        bottom: 25px;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+    .blog-section {
+        padding: 30px 20px;
+    }
+
+    .arrow-left-wrapper {
+        padding: 0 20px;
+        font-size: 26px;
+    }
+
+    .header-section h1 {
+        font-size: 24px;
+    }
+
+    .footer-section i {
+        font-size: 24px;
+    }
+
+    .footer-section p {
+        font-size: 16px;
+    }
+
+
 }

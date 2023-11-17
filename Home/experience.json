@@ -1,0 +1,17 @@
+[
+    {
+        "image": "/Assets/computer.webp",
+        "title": "My Experience",
+        "body": "Lorem ipsum dolor sit amet consectetur adipisicing elit  ",
+        "webDeveloper": {
+            "title": "Web Developer",
+            "date": "2021 Feb -2022 Oct",
+            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit ."
+        },
+        "uiEngineer": {
+            "title": "UI Engineer ",
+            "date": "2017 June - 2020 Oct",
+            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+        }
+    }
+]

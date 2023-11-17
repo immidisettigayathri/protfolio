@@ -5,51 +5,61 @@
     top: 0;
     background-color: white;
     padding: 0;
-
-
-
-
+    box-shadow: 5px 5px white;
 }
 
 .header-section h1 {
-    font-family: 'Heebo', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-weight: 500;
     font-size: 20px;
     padding: 5px;
     margin-right: 10px;
-
     color: #000000;
-
-
 }
 
 .header-section h1:hover {
-    color: #FF7C7C;
-}
-
-a:hover {
-    color: #FF7C7C;
+    color: #FF6464;
 }
 
 a {
     text-decoration: none;
+    color: black;
 }
 
 .fa-arrow-down:before {
     color: black;
 }
 
+.content-wrapper h2 :hover {
+    color: #FF6464;
+}
 
+.content-wrapper img :hover {
+    color: #FF6464;
+}
+
+.arrow-left-wrapper {
+    font-family: Heebo;
+    font-size: 20px;
+    padding: 0 94px;
+    color: #21243D;
+    margin: 0;
+    position: sticky;
+    top: 24px;
+}
+
+.arrow-left-wrapper:hover {
+    color: #FF6464;
+}
 
 .title {
-    font-family: 'Heebo', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-size: 34px;
     font-weight: 500;
     color: #000000;
     text-transform: capitalize;
     text-align: center;
     margin: 0;
-
 }
 
 .para {
@@ -62,30 +72,33 @@ a {
 }
 
 .content-wrapper h1 {
-    font-family: 'Heebo', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-size: 34px;
     font-weight: 500;
     color: #000000;
     margin: 10px 0;
-
-
 }
 
 .resume-icon i {
-
     display: flex;
     justify-content: center;
     color: white;
-
 }
 
 .fa-file:before {
-    border: 15px solid #FF7C7C;
-    background: #FF7C7C;
+    border: 15px solid #FF6464;
+    background: #FF6464;
     color: white;
     border-radius: 50%;
-    font-size: 16px;
+    font-size: 18px;
+}
 
+.fa-github:before {
+    border: 15px solid #FF6464;
+    background: #FF6464;
+    border-radius: 50%;
+    font-size: 18px;
+    color: white
 }
 
 .content-wrapper {
@@ -97,10 +110,20 @@ a {
 .content-wrapper h2 {
     font-family: Heebo;
     text-align: center;
-    margin: 0 0px 5px;
-
+    margin: 0;
     font-weight: 400;
     font-size: 18px;
+    display: flex;
+}
+
+
+
+.content-wrapper i:hover {
+    color: #FF6464;
+}
+
+.content-wrapper img:hover {
+    color: #FF6464;
 }
 
 .content-wrapper img {
@@ -108,13 +131,6 @@ a {
     cursor: pointer;
     margin-left: 5px;
 }
-
-
-.content-wrapper img :hover {
-    background-color: #FF7C7C
-}
-
-
 
 .icon-wrapper {
     display: flex;
@@ -124,24 +140,38 @@ a {
     border-radius: 10px;
 }
 
-
-
-
-
 .call-icon i {
     display: flex;
     justify-content: center;
 }
 
 .fa-phone:before {
-    border: 15px solid #FF7C7C;
-    background: #FF7C7C;
+    border: 15px solid #FF6464;
+    background: #FF6464;
     border-radius: 50%;
     font-size: 16px;
     color: white
 }
 
+.call-icon-wrapper i {
+    display: block;
+    font-size: 20px;
+}
 
+.call-icon-wrapper {
+    border: 15px solid #FF6464;
+    background: #FF6464;
+    border-radius: 50%;
+    color: white;
+    position: fixed;
+    left: 15px;
+    bottom: 38px;
+
+    width: 27px;
+    display: flex;
+    justify-content: center;
+
+}
 
 .mail-icon i {
     display: flex;
@@ -149,12 +179,11 @@ a {
 }
 
 .fa-envelope:before {
-    border: 15px solid #FF7C7C;
-    background: #FF7C7C;
+    border: 15px solid #FF6464;
+    background: #FF6464;
     color: white;
     border-radius: 50%;
-    font-size: 16px;
-
+    font-size: 18px;
 }
 
 .content-wrapper h1 {
@@ -169,45 +198,46 @@ a {
     color: #000000;
 }
 
+.content-wrapper i {
+    margin-left: 7px;
+    margin-top: 3px;
+}
+
+.fa-arrow-down:before :hover {
+    color: #FF6464;
+}
 
 
 .form-wrapper h1 {
-    font-family: 'heebo';
+    font-family: 'Poppins', sans-serif;
     color: #000000;
     font-size: 34px;
     font-weight: 500;
     text-align: center;
+}
 
-
-
+.form-wrapper {
+    width: 50%;
 }
 
 form {
     background-color: white;
-
     box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.5);
     border-radius: 10px;
     padding: 20px;
     width: 100%;
-
 }
 
 .form-1 {
-
     margin-bottom: 25px;
     font-family: heebo;
     color: #000000;
-
-
 }
-
-
 
 .form-1 input,
 .form-1 textarea {
     border: 1px solid #777;
     border-radius: 10px;
-
     padding: 10px;
     display: block;
     width: 93%;
@@ -215,8 +245,8 @@ form {
 }
 
 button {
-    background-color: #FF7C7C;
-    border: 1px solid #FF7C7C;
+    background-color: #FF6464;
+    border: 1px solid #FF6464;
     border-radius: 30px;
     color: white;
     display: block;
@@ -226,22 +256,18 @@ button {
     font-size: 16px;
     padding: 10px;
     cursor: pointer;
-
+    font-family: 'Poppins', sans-serif;
 }
 
 .contact-section-wrapper {
     display: flex;
     padding: 60px 0;
     gap: 20px;
-
-
-
 }
 
 .map-wrapper iframe {
     width: 600px;
     height: 570px;
-
     border: none;
     border-radius: 10px;
 }
@@ -254,19 +280,41 @@ button {
     padding: 60px 80px 0;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
+#up-chevron {
+    font-size: 18px;
+    background-color: #21243D;
+    border-radius: 50%;
+    border: none;
+    color: white;
+    cursor: pointer;
+    position: fixed;
+    bottom: 30px;
+    right: 17px;
+    width: 50px;
+    padding: 13px;
+}
+
+
+.map-wrapper {
+    width: 50%;
+}
 
 .footer-section {
-
     text-align: center;
 }
 
-.footer-section img {
-
+.footer-section i {
+    font-size: 25px;
+    color: black;
     margin-left: 16px;
 }
 
-.footer-section img:hover {
-    background: #FF7C7C;
+.footer-section a :hover {
+    color: #FF6464;
 }
 
 .footer-section p {
@@ -278,7 +326,6 @@ button {
     font-weight: 400;
     margin-left: 17px;
 }
-
 
 @media all and (max-width:767px) {
     .header-section {
@@ -298,8 +345,10 @@ button {
     }
 
     .content-wrapper h2 {
-        width: 100%;
+
         margin: 0 0 13px;
+        display: flex;
+        justify-content: center;
     }
 
     .content-wrapper p {
@@ -318,9 +367,38 @@ button {
         font-size: 30px;
     }
 
+    .resume-icon {
+        margin-bottom: 15px;
+    }
+
     .call-icon {
         padding: 0;
+        margin-bottom: 15px;
     }
+
+    .call-icon-wrapper {
+        position: fixed;
+        left: 15px;
+        bottom: 47px;
+        display: block;
+        font-size: 20px;
+    }
+
+    .call-icon-wrapper i {
+        display: block;
+        font-size: 20px;
+    }
+
+    .fa-envelope:before {
+        border: 15px solid #FF6464;
+        background: #FF6464;
+        border-radius: 50%;
+        color: white;
+    }
+
+    /* .content-wrapper {
+        line-height: 25px;
+    } */
 
     .icon-wrapper {
         flex-direction: column;
@@ -332,16 +410,29 @@ button {
         gap: 20px;
     }
 
+    .arrow-left-wrapper {
+        padding: 0 10px;
+        position: unset;
+
+    }
+
     .map-wrapper iframe {
         width: 100%;
+        height: 275px;
         padding: 0;
-
-
     }
 
     form {
         width: 87%;
     }
+
+    .map-wrapper {
+        width: 100%;
+    }
+
+    /* #up-chevron {
+        width: 47%;
+    } */
 }
 
 @media all and (min-width:768px) and (max-width:992px) {
@@ -350,24 +441,164 @@ button {
     }
 
     .header-section h1:hover {
-        color: #FF7C7C;
+        color: #FF6464;
+    }
+
+    /* 
+    .contact-section-wrapper {
+        flex-direction: column;
+    } */
+
+    .map-wrapper iframe {
+        width: 100%;
+    }
+
+    .arrow-left-wrapper {
+        padding: 0 20px;
+    }
+
+    /* 
+    form {
+        width: 95%;
+    } */
+
+    .form-1 input,
+    .form-1 textarea {
+        width: 96%;
+
+    }
+
+    .call-icon-wrapper {
+        position: fixed;
+        left: 15px;
+        bottom: 47px;
+        display: block;
+    }
+
+    .call-icon-wrapper i {
+        display: block;
+        font-size: 30px;
+    }
+
+    #up-chevron {
+        font-size: 30px;
+        width: 8%;
+        padding: 9px;
+    }
+
+    .call-icon-wrapper .fa-envelope:before {
+        font-size: 30px;
+
+    }
+
+    .fa-phone:before {
+        border: 15px solid #FF6464;
+        background: #FF6464;
+        border-radius: 50%;
+
+        color: white;
+    }
+
+}
+
+@media screen and (max-width: 768px) and (orientation: landscape) {
+    .header-section {
+        justify-content: right;
     }
 
     .contact-section-wrapper {
-        flex-direction: column;
+        flex-direction: row;
+    }
+
+    .map-wrapper {
+        width: 50%;
+    }
+
+    .map-wrapper iframe {
+        height: 100%;
+    }
+
+    .title {
+        font-size: 25px;
+    }
+
+    .para {
+        font-size: 14px;
+        margin: 15px 0;
+    }
+
+    .footer-section i {
+        font-size: 20px;
+    }
+
+    .fa-file:before {
+        font-size: 11px;
+    }
+
+    .fa-github:before {
+        font-size: 11px;
+    }
+
+    .fa-envelope:before {
+        font-size: 11px;
+    }
+
+    .content-wrapper h1 {
+        font-size: 23px;
+    }
+
+    #up-chevron {
+        font-size: 11px;
+        width: 40px;
+    }
+
+    .content-wrapper h2 {
+        font-size: 15px;
+    }
+
+    .content-wrapper p {
+        font-size: 15px;
+    }
+
+    .call-icon-wrapper i {
+        font-size: 15px;
+    }
+
+    .call-icon-wrapper {
+        display: flex;
+        justify-content: center;
+        width: 17px;
+        bottom: 30px;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+    .contact-us-wrapper {
+        padding: 20px 0;
+    }
+
+    .header-section h1 {
+        font-size: 24px;
+    }
+
+    .arrow-left-wrapper {
+        padding: 20px;
+        font-size: 26px;
     }
 
     .map-wrapper iframe {
         width: 100%;
     }
 
-    form {
-        width: 95%;
+    .call-icon-wrapper i {
+        font-size: 26px;
+        display: flex;
+        justify-content: center;
+        width: 47px;
     }
 
-    .form-1 input,
-    .form-1 textarea {
-        width: 96%;
-
+    #up-chevron {
+        font-size: 26px;
+        width: 58px;
     }
 }

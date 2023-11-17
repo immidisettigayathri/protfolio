@@ -1,0 +1,17 @@
+[
+    {
+        "image": "/Assets/education.jpg",
+        "title": "My Education",
+        "body": "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+        "postGraduation": {
+            "title": "Masters of Computer Application ",
+            "date": "2021 Feb - 2022 Oct",
+            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+        },
+        "graduation": {
+            "title": "Bachelor of Science",
+            "date": "2017 June - 2020 Oct",
+            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+        }
+    }
+]
